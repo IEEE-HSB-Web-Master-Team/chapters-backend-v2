@@ -1,3 +1,375 @@
 2024-12-12 18:03:56 [[32minfo[39m]: Database connection established.
 2024-12-12 18:03:56 [[32minfo[39m]: Server is listening on port 3000
-2024-12-12 18:04:21 [[32minfo[39m]: Incoming request: POST /add-team
+2024-12-12 18:04:21 [[32minfo[39m]: Incoming request: POST /add-team2024-12-12 20:22:01 [[32minfo[39m]: Database connection established.
+2024-12-12 20:22:01 [[32minfo[39m]: Server is listening on port 3000
+2024-12-12 20:22:12 [[32minfo[39m]: Incoming request: GET /Home
+2024-12-12 20:23:10 [[32minfo[39m]: Database connection established.
+2024-12-12 20:23:10 [[32minfo[39m]: Server is listening on port 3000
+2024-12-12 20:23:14 [[32minfo[39m]: Incoming request: GET /Home
+2024-12-12 20:23:14 [[31merror[39m]: Committee '' does not exist.
+2024-12-12 20:24:27 [[32minfo[39m]: Database connection established.
+2024-12-12 20:24:27 [[32minfo[39m]: Server is listening on port 3000
+2024-12-12 20:24:32 [[32minfo[39m]: Incoming request: GET /Home?committe=ras
+2024-12-12 20:24:32 [[32minfo[39m]: Successfully fetched info for committee 'ras'.
+2024-12-12 20:24:54 [[32minfo[39m]: Incoming request: GET /Home?committe
+2024-12-12 20:24:54 [[31merror[39m]: Committee '' does not exist.
+2024-12-12 20:36:55 [[32minfo[39m]: Database connection established.
+2024-12-12 20:36:55 [[32minfo[39m]: Server is listening on port 3000
+2024-12-12 20:36:59 [[32minfo[39m]: Incoming request: GET /home?committe
+2024-12-12 20:36:59 [[31merror[39m]: Committee name is required.
+2024-12-12 20:37:04 [[32minfo[39m]: Incoming request: GET /home
+2024-12-12 20:37:04 [[31merror[39m]: Committee name is required.
+2024-12-12 20:37:06 [[32minfo[39m]: Incoming request: GET /home
+2024-12-12 20:37:06 [[31merror[39m]: Committee name is required.
+2024-12-12 20:37:07 [[32minfo[39m]: Incoming request: GET /home
+2024-12-12 20:37:07 [[31merror[39m]: Committee name is required.
+2024-12-12 20:37:52 [[32minfo[39m]: Incoming request: GET /home?committe=ras
+2024-12-12 20:37:52 [[32minfo[39m]: Successfully fetched info for committee 'ras'.
+2024-12-12 20:37:58 [[32minfo[39m]: Incoming request: GET /home?committe=pes
+2024-12-12 20:37:58 [[32minfo[39m]: Successfully fetched info for committee 'pes'.
+2024-12-12 20:38:02 [[32minfo[39m]: Incoming request: GET /home?committe=it
+2024-12-12 20:38:02 [[31merror[39m]: Committee 'it' does not exist.
+2024-12-12 20:38:09 [[32minfo[39m]: Incoming request: GET /home?committe
+2024-12-12 20:38:09 [[31merror[39m]: Committee name is required.
+2024-12-12 20:38:43 [[32minfo[39m]: Database connection established.
+2024-12-12 20:38:43 [[32minfo[39m]: Server is listening on port 3000
+2024-12-12 20:38:49 [[32minfo[39m]: Incoming request: GET /home?committe
+2024-12-12 20:38:49 [[31merror[39m]: Committee '' does not exist.
+2024-12-12 20:42:12 [[32minfo[39m]: Database connection established.
+2024-12-12 20:42:12 [[32minfo[39m]: Server is listening on port 3000
+2024-12-12 20:42:19 [[32minfo[39m]: Incoming request: GET /home/committe
+2024-12-12 20:42:19 [[31merror[39m]: Committee name is required.
+2024-12-12 20:42:35 [[32minfo[39m]: Incoming request: GET /home/committe?committe=pes
+2024-12-12 20:42:35 [[32minfo[39m]: Successfully fetched info for committee 'pes'.
+2024-12-12 20:42:44 [[32minfo[39m]: Incoming request: GET /home/
+2024-12-12 20:42:44 [[31merror[39m]: Home page info not found.
+2024-12-12 20:45:52 [[32minfo[39m]: Database connection established.
+2024-12-12 20:45:52 [[32minfo[39m]: Server is listening on port 3000
+2024-12-12 20:45:52 [[32minfo[39m]: Incoming request: GET /home/
+2024-12-12 20:45:52 [[31merror[39m]: Home page info not found.
+2024-12-12 20:46:03 [[32minfo[39m]: Incoming request: GET /home/committee=ras
+2024-12-12 20:46:26 [[32minfo[39m]: Incoming request: GET /home/committee/committee=ras
+2024-12-12 20:49:48 [[32minfo[39m]: Database connection established.
+2024-12-12 20:49:48 [[32minfo[39m]: Server is listening on port 3000
+2024-12-12 20:49:53 [[32minfo[39m]: Incoming request: GET /home/committee/committee=ras
+2024-12-12 20:49:54 [[32minfo[39m]: Incoming request: GET /home/committee/committee=ras
+2024-12-12 20:50:08 [[32minfo[39m]: Incoming request: GET /home/committee?committee=ras
+2024-12-12 20:50:08 [[31merror[39m]: Error in getCommitte API: HomePageService.getCommitte is not a function
+2024-12-12 20:50:11 [[32minfo[39m]: Incoming request: GET /home/committee?committee=ras
+2024-12-12 20:50:11 [[31merror[39m]: Error in getCommitte API: HomePageService.getCommitte is not a function
+2024-12-12 20:50:12 [[32minfo[39m]: Incoming request: GET /home/committee?committee=ras
+2024-12-12 20:50:12 [[31merror[39m]: Error in getCommitte API: HomePageService.getCommitte is not a function
+2024-12-12 20:53:46 [[32minfo[39m]: Database connection established.
+2024-12-12 20:53:46 [[32minfo[39m]: Server is listening on port 3000
+2024-12-12 20:53:51 [[32minfo[39m]: Incoming request: GET /home/committee?committee=ras
+2024-12-12 20:53:51 [[32minfo[39m]: Committee found: {
+  _id: new ObjectId('675609de85d559b2001f230a'),
+  committee: 'ras',
+  colors: {
+    light: {
+      primary: '#4A90E2',
+      secondary: '#50E3C2',
+      background: '#F5F5F5',
+      text: '#333333'
+    },
+    dark: {
+      primary: '#1A73E8',
+      secondary: '#34A853',
+      background: '#121212',
+      text: '#FFFFFF'
+    },
+    _id: new ObjectId('675b313f7ec5c62cb14c234d')
+  },
+  social_media_links: {
+    facebook: 'https://facebook.com/ras',
+    insta: 'https://instagram.com/ras',
+    _id: new ObjectId('675b313f7ec5c62cb14c234e')
+  },
+  home_page: {
+    about_us: {
+      description: 'The RAS chapter is committed to promoting research and academic excellence.'
+    },
+    mega_events: { description: 'Annual Research Symposium and other mega events.' },
+    why_join: {
+      description: 'Join RAS to enhance your knowledge, network, and experience the world of research.'
+    },
+    _id: new ObjectId('675b313f7ec5c62cb14c234f')
+  },
+  about_page: {
+    mission: 'To foster research and development in the field of computer science.',
+    vision: 'To become a leader in promoting academic excellence and research opportunities.'
+  }
+}
+2024-12-12 20:53:51 [[32minfo[39m]: Successfully fetched info for committee 'ras'.
+2024-12-12 20:53:57 [[32minfo[39m]: Incoming request: GET /home/committee?committee=cs
+2024-12-12 20:53:57 [[32minfo[39m]: Committee found: {
+  _id: new ObjectId('675609de85d559b2001f230b'),
+  committee: 'cs',
+  colors: {
+    light: {
+      primary: '#4285F4',
+      secondary: '#34A853',
+      background: '#F8F9FA',
+      text: '#0A0A0A'
+    },
+    dark: {
+      primary: '#0D47A1',
+      secondary: '#0B8043',
+      background: '#212121',
+      text: '#FFFFFF'
+    },
+    _id: new ObjectId('675b31457ec5c62cb14c2351')
+  },
+  social_media_links: {
+    facebook: 'https://facebook.com/cs',
+    insta: 'https://instagram.com/cs',
+    _id: new ObjectId('675b31457ec5c62cb14c2352')
+  },
+  home_page: {
+    about_us: {
+      description: 'The Computer Science committee brings together students passionate about tech.'
+    },
+    mega_events: {
+      description: 'We host coding challenges, hackathons, and workshops throughout the year.'
+    },
+    why_join: {
+      description: 'Join CS to dive deeper into technology and build the future.'
+    },
+    _id: new ObjectId('675b31457ec5c62cb14c2353')
+  },
+  about_page: {
+    mission: 'To inspire and create leaders in the field of computer science.',
+    vision: 'To develop a vibrant community of passionate tech enthusiasts.'
+  }
+}
+2024-12-12 20:53:57 [[32minfo[39m]: Successfully fetched info for committee 'cs'.
+2024-12-12 20:54:05 [[32minfo[39m]: Incoming request: GET /home/committee?committee=it
+2024-12-12 20:54:05 [[31merror[39m]: No committee found for: it
+2024-12-12 20:54:05 [[32minfo[39m]: Committee found: null
+2024-12-12 20:54:05 [[31merror[39m]: Committee 'it' does not exist.
+2024-12-12 20:54:06 [[32minfo[39m]: Incoming request: GET /home/committee?committee=cs
+2024-12-12 20:54:06 [[32minfo[39m]: Committee found: {
+  _id: new ObjectId('675609de85d559b2001f230b'),
+  committee: 'cs',
+  colors: {
+    light: {
+      primary: '#4285F4',
+      secondary: '#34A853',
+      background: '#F8F9FA',
+      text: '#0A0A0A'
+    },
+    dark: {
+      primary: '#0D47A1',
+      secondary: '#0B8043',
+      background: '#212121',
+      text: '#FFFFFF'
+    },
+    _id: new ObjectId('675b314e7ec5c62cb14c2356')
+  },
+  social_media_links: {
+    facebook: 'https://facebook.com/cs',
+    insta: 'https://instagram.com/cs',
+    _id: new ObjectId('675b314e7ec5c62cb14c2357')
+  },
+  home_page: {
+    about_us: {
+      description: 'The Computer Science committee brings together students passionate about tech.'
+    },
+    mega_events: {
+      description: 'We host coding challenges, hackathons, and workshops throughout the year.'
+    },
+    why_join: {
+      description: 'Join CS to dive deeper into technology and build the future.'
+    },
+    _id: new ObjectId('675b314e7ec5c62cb14c2358')
+  },
+  about_page: {
+    mission: 'To inspire and create leaders in the field of computer science.',
+    vision: 'To develop a vibrant community of passionate tech enthusiasts.'
+  }
+}
+2024-12-12 20:54:06 [[32minfo[39m]: Successfully fetched info for committee 'cs'.
+2024-12-12 20:54:09 [[32minfo[39m]: Incoming request: GET /home/committee?committee=pes
+2024-12-12 20:54:09 [[32minfo[39m]: Committee found: {
+  _id: new ObjectId('675609de85d559b2001f230c'),
+  committee: 'pes',
+  colors: {
+    light: {
+      primary: '#FF5733',
+      secondary: '#C70039',
+      background: '#FFC300',
+      text: '#900C3F'
+    },
+    dark: {
+      primary: '#900C3F',
+      secondary: '#C70039',
+      background: '#2E2E2E',
+      text: '#FFFFFF'
+    },
+    _id: new ObjectId('675b31517ec5c62cb14c235a')
+  },
+  social_media_links: {
+    facebook: 'https://facebook.com/pes',
+    insta: 'https://instagram.com/pes',
+    _id: new ObjectId('675b31517ec5c62cb14c235b')
+  },
+  home_page: {
+    about_us: {
+      description: 'The PES chapter fosters an environment of learning, innovation, and leadership.'
+    },
+    mega_events: {
+      description: 'Annual events that showcase technological innovations, workshops, and seminars.'
+    },
+    why_join: {
+      description: 'Join PES to lead the way in educational and technological advancements.'
+    },
+    _id: new ObjectId('675b31517ec5c62cb14c235c')
+  },
+  about_page: {
+    mission: 'To foster innovation and leadership in the field of technology.',
+    vision: 'To create a diverse, collaborative environment for students and professionals.'
+  }
+}
+2024-12-12 20:54:09 [[32minfo[39m]: Successfully fetched info for committee 'pes'.
+2024-12-12 20:54:13 [[32minfo[39m]: Incoming request: GET /home/committee?committee=cs
+2024-12-12 20:54:13 [[32minfo[39m]: Committee found: {
+  _id: new ObjectId('675609de85d559b2001f230b'),
+  committee: 'cs',
+  colors: {
+    light: {
+      primary: '#4285F4',
+      secondary: '#34A853',
+      background: '#F8F9FA',
+      text: '#0A0A0A'
+    },
+    dark: {
+      primary: '#0D47A1',
+      secondary: '#0B8043',
+      background: '#212121',
+      text: '#FFFFFF'
+    },
+    _id: new ObjectId('675b31557ec5c62cb14c235e')
+  },
+  social_media_links: {
+    facebook: 'https://facebook.com/cs',
+    insta: 'https://instagram.com/cs',
+    _id: new ObjectId('675b31557ec5c62cb14c235f')
+  },
+  home_page: {
+    about_us: {
+      description: 'The Computer Science committee brings together students passionate about tech.'
+    },
+    mega_events: {
+      description: 'We host coding challenges, hackathons, and workshops throughout the year.'
+    },
+    why_join: {
+      description: 'Join CS to dive deeper into technology and build the future.'
+    },
+    _id: new ObjectId('675b31557ec5c62cb14c2360')
+  },
+  about_page: {
+    mission: 'To inspire and create leaders in the field of computer science.',
+    vision: 'To develop a vibrant community of passionate tech enthusiasts.'
+  }
+}
+2024-12-12 20:54:13 [[32minfo[39m]: Successfully fetched info for committee 'cs'.
+2024-12-12 20:54:14 [[32minfo[39m]: Incoming request: GET /home/committee?committee=ras
+2024-12-12 20:54:14 [[32minfo[39m]: Committee found: {
+  _id: new ObjectId('675609de85d559b2001f230a'),
+  committee: 'ras',
+  colors: {
+    light: {
+      primary: '#4A90E2',
+      secondary: '#50E3C2',
+      background: '#F5F5F5',
+      text: '#333333'
+    },
+    dark: {
+      primary: '#1A73E8',
+      secondary: '#34A853',
+      background: '#121212',
+      text: '#FFFFFF'
+    },
+    _id: new ObjectId('675b31567ec5c62cb14c2362')
+  },
+  social_media_links: {
+    facebook: 'https://facebook.com/ras',
+    insta: 'https://instagram.com/ras',
+    _id: new ObjectId('675b31567ec5c62cb14c2363')
+  },
+  home_page: {
+    about_us: {
+      description: 'The RAS chapter is committed to promoting research and academic excellence.'
+    },
+    mega_events: { description: 'Annual Research Symposium and other mega events.' },
+    why_join: {
+      description: 'Join RAS to enhance your knowledge, network, and experience the world of research.'
+    },
+    _id: new ObjectId('675b31567ec5c62cb14c2364')
+  },
+  about_page: {
+    mission: 'To foster research and development in the field of computer science.',
+    vision: 'To become a leader in promoting academic excellence and research opportunities.'
+  }
+}
+2024-12-12 20:54:14 [[32minfo[39m]: Successfully fetched info for committee 'ras'.
+2024-12-12 20:54:18 [[32minfo[39m]: Incoming request: GET /home/committee?committee=cs
+2024-12-12 20:54:18 [[32minfo[39m]: Committee found: {
+  _id: new ObjectId('675609de85d559b2001f230b'),
+  committee: 'cs',
+  colors: {
+    light: {
+      primary: '#4285F4',
+      secondary: '#34A853',
+      background: '#F8F9FA',
+      text: '#0A0A0A'
+    },
+    dark: {
+      primary: '#0D47A1',
+      secondary: '#0B8043',
+      background: '#212121',
+      text: '#FFFFFF'
+    },
+    _id: new ObjectId('675b315a7ec5c62cb14c2366')
+  },
+  social_media_links: {
+    facebook: 'https://facebook.com/cs',
+    insta: 'https://instagram.com/cs',
+    _id: new ObjectId('675b315a7ec5c62cb14c2367')
+  },
+  home_page: {
+    about_us: {
+      description: 'The Computer Science committee brings together students passionate about tech.'
+    },
+    mega_events: {
+      description: 'We host coding challenges, hackathons, and workshops throughout the year.'
+    },
+    why_join: {
+      description: 'Join CS to dive deeper into technology and build the future.'
+    },
+    _id: new ObjectId('675b315a7ec5c62cb14c2368')
+  },
+  about_page: {
+    mission: 'To inspire and create leaders in the field of computer science.',
+    vision: 'To develop a vibrant community of passionate tech enthusiasts.'
+  }
+}
+2024-12-12 20:54:18 [[32minfo[39m]: Successfully fetched info for committee 'cs'.
+2024-12-12 20:55:10 [[32minfo[39m]: Incoming request: GET /home
+2024-12-12 20:55:10 [[31merror[39m]: Error in getHomePage API: HomePageService.getCommittee is not a function
+2024-12-12 20:55:12 [[32minfo[39m]: Incoming request: GET /home
+2024-12-12 20:55:12 [[31merror[39m]: Error in getHomePage API: HomePageService.getCommittee is not a function
+2024-12-12 20:55:13 [[32minfo[39m]: Incoming request: GET /home
+2024-12-12 20:55:13 [[31merror[39m]: Error in getHomePage API: HomePageService.getCommittee is not a function
+2024-12-12 20:55:13 [[32minfo[39m]: Incoming request: GET /home
+2024-12-12 20:55:13 [[31merror[39m]: Error in getHomePage API: HomePageService.getCommittee is not a function
+2024-12-12 20:55:20 [[32minfo[39m]: Incoming request: GET /home/
+2024-12-12 20:55:20 [[31merror[39m]: Error in getHomePage API: HomePageService.getCommittee is not a function
+2024-12-12 20:55:35 [[32minfo[39m]: Incoming request: GET /home/
+2024-12-12 20:55:35 [[31merror[39m]: Error in getHomePage API: HomePageService.getCommittee is not a function
+2024-12-12 20:56:00 [[32minfo[39m]: Database connection established.
+2024-12-12 20:56:00 [[32minfo[39m]: Server is listening on port 3000
+2024-12-12 20:56:03 [[32minfo[39m]: Incoming request: GET /home/
+2024-12-12 20:56:03 [[31merror[39m]: No committee found for: home
+2024-12-12 20:56:03 [[32minfo[39m]: Committee found: null
+2024-12-12 20:56:03 [[31merror[39m]: Home page info not found.

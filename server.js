@@ -17,8 +17,8 @@ app.use((req, _, next) => {
   next();
 });
 
-app.use(homePageRouter);
-app.use(addTeamRouter)
+app.use('/home', homePageRouter);
+app.use('/home', addTeamRouter)
 
 
 app.use((error, req, res, next) => {

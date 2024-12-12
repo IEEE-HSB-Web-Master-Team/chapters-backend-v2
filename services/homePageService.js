@@ -1,18 +1,19 @@
 import App from "../models/homePageModel.js"; 
+import { logger } from "../config/logger.js";
 
 class HomePageService {
-    static async getCommitte(committeeName) {
+    static async getPageInfo(committeeName) {
         try {
             const committeeInfo = await App.findOne({ committee: committeeName.toLowerCase() });
             
             if (!committeeInfo) {
-                console.log("No committee found for:", committeeName.toLowerCase());
+                logger.error(`No committee found for: ${committeeName.toLowerCase()}`);
             }
 
-            console.log(committeeInfo); 
+            logger.info(`Committee found: ${committeeInfo}`);
             return committeeInfo; 
         } catch (error) {
-            console.error("Error fetching committee:", error.message);
+            logger.error(`Error fetching committee: ${error.message}`);
             throw new Error(`Error fetching committee: ${error.message}`);
         } 
     }
