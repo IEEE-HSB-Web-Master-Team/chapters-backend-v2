@@ -10,7 +10,7 @@ class HomePageService {
                 logger.error(`No committee found for: ${committeeName.toLowerCase()}`);
             }
 
-            logger.info(`Committee found: ${committeeInfo}`);
+            logger.info(`Committee found: ${committeeInfo.committee}`);
             return committeeInfo; 
         } catch (error) {
             logger.error(`Error fetching committee: ${error.message}`);

@@ -1,0 +1,130 @@
+2024-12-15 15:06:04 [[32minfo[39m]: Database connection established.
+2024-12-15 15:06:04 [[32minfo[39m]: Server is listening on port 3000
+2024-12-15 15:06:17 [[32minfo[39m]: Incoming request: GET /home/committee?committee=cs
+2024-12-15 15:06:17 [[32minfo[39m]: Committee found: {
+  _id: new ObjectId('675609de85d559b2001f230b'),
+  committee: 'cs',
+  colors: {
+    light: {
+      primary: '#4285F4',
+      secondary: '#34A853',
+      background: '#F8F9FA',
+      text: '#0A0A0A'
+    },
+    dark: {
+      primary: '#0D47A1',
+      secondary: '#0B8043',
+      background: '#212121',
+      text: '#FFFFFF'
+    },
+    _id: new ObjectId('675ed449d9c4ba934e0001b4')
+  },
+  social_media_links: {
+    facebook: 'https://facebook.com/cs',
+    insta: 'https://instagram.com/cs',
+    _id: new ObjectId('675ed449d9c4ba934e0001b5')
+  },
+  home_page: {
+    about_us: {
+      description: 'The Computer Science committee brings together students passionate about tech.'
+    },
+    mega_events: {
+      description: 'We host coding challenges, hackathons, and workshops throughout the year.'
+    },
+    why_join: {
+      description: 'Join CS to dive deeper into technology and build the future.'
+    },
+    _id: new ObjectId('675ed449d9c4ba934e0001b6')
+  },
+  about_page: {
+    mission: 'To inspire and create leaders in the field of computer science.',
+    vision: 'To develop a vibrant community of passionate tech enthusiasts.'
+  }
+}
+2024-12-15 15:06:17 [[32minfo[39m]: Successfully fetched info for committee.
+2024-12-15 15:06:29 [[32minfo[39m]: Incoming request: GET /home/committee?committee=cs
+2024-12-15 15:06:29 [[32minfo[39m]: Committee found: {
+  _id: new ObjectId('675609de85d559b2001f230b'),
+  committee: 'cs',
+  colors: {
+    light: {
+      primary: '#4285F4',
+      secondary: '#34A853',
+      background: '#F8F9FA',
+      text: '#0A0A0A'
+    },
+    dark: {
+      primary: '#0D47A1',
+      secondary: '#0B8043',
+      background: '#212121',
+      text: '#FFFFFF'
+    },
+    _id: new ObjectId('675ed455d9c4ba934e0001b8')
+  },
+  social_media_links: {
+    facebook: 'https://facebook.com/cs',
+    insta: 'https://instagram.com/cs',
+    _id: new ObjectId('675ed455d9c4ba934e0001b9')
+  },
+  home_page: {
+    about_us: {
+      description: 'The Computer Science committee brings together students passionate about tech.'
+    },
+    mega_events: {
+      description: 'We host coding challenges, hackathons, and workshops throughout the year.'
+    },
+    why_join: {
+      description: 'Join CS to dive deeper into technology and build the future.'
+    },
+    _id: new ObjectId('675ed455d9c4ba934e0001ba')
+  },
+  about_page: {
+    mission: 'To inspire and create leaders in the field of computer science.',
+    vision: 'To develop a vibrant community of passionate tech enthusiasts.'
+  }
+}
+2024-12-15 15:06:29 [[32minfo[39m]: Successfully fetched info for committee.
+2024-12-15 15:07:09 [[32minfo[39m]: Database connection established.
+2024-12-15 15:07:09 [[32minfo[39m]: Server is listening on port 3000
+2024-12-15 15:07:20 [[32minfo[39m]: Incoming request: GET /home/committee?committee=cs
+2024-12-15 15:07:20 [[32minfo[39m]: Committee found: {
+  _id: new ObjectId('675609de85d559b2001f230b'),
+  committee: 'cs',
+  colors: {
+    light: {
+      primary: '#4285F4',
+      secondary: '#34A853',
+      background: '#F8F9FA',
+      text: '#0A0A0A'
+    },
+    dark: {
+      primary: '#0D47A1',
+      secondary: '#0B8043',
+      background: '#212121',
+      text: '#FFFFFF'
+    },
+    _id: new ObjectId('675ed4886562af8dced98eb3')
+  },
+  social_media_links: {
+    facebook: 'https://facebook.com/cs',
+    insta: 'https://instagram.com/cs',
+    _id: new ObjectId('675ed4886562af8dced98eb4')
+  },
+  home_page: {
+    about_us: {
+      description: 'The Computer Science committee brings together students passionate about tech.'
+    },
+    mega_events: {
+      description: 'We host coding challenges, hackathons, and workshops throughout the year.'
+    },
+    why_join: {
+      description: 'Join CS to dive deeper into technology and build the future.'
+    },
+    _id: new ObjectId('675ed4886562af8dced98eb5')
+  },
+  about_page: {
+    mission: 'To inspire and create leaders in the field of computer science.',
+    vision: 'To develop a vibrant community of passionate tech enthusiasts.'
+  }
+}
+2024-12-15 15:07:20 [[32minfo[39m]: Successfully fetched info for committee.

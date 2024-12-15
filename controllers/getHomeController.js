@@ -20,7 +20,7 @@ const getHomePageController = {
         return res.status(404).json({ success: false, error: "Committee not found." });
       }
 
-      logger.info(`Successfully fetched info for committee '${committee}'.`);
+      logger.info(`Successfully fetched info for committee.`);
       res.status(200).json({ success: true, committeeInfo });
     } catch (error) {
       logger.error(`Error in getCommitte API: ${error.message}`);
