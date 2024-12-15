@@ -4,13 +4,28 @@ import { configDotenv } from "dotenv";
 import homePageRouter from "./routes/getHomeRoute.js";
 import addTeamRouter from "./routes/addTeamRoute.js"
 import { logger } from "./config/logger.js";
+import toobusy_js from "toobusy-js";
+import helmet from "helmet";
 
 configDotenv();
 
-const app = express();
 const PORT = process.env.PORT || 5000;
 
+const app = express();
+app.use(helmet())
+toobusy_js.maxLag(200)
+
 app.use(express.json());
+
+app.use((req, res, next) => {
+  if(toobusy_js()) {
+    logger.warn("Server is busy")
+    res.status(503).json({success: false, message: "Server too busy, try again later."})
+  } else {
+    next()
+  }
+})
+
 
 app.use((req, _, next) => {
   logger.info(`Incoming request: ${req.method} ${req.url}`);
