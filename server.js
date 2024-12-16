@@ -18,23 +18,21 @@ toobusy_js.maxLag(200)
 app.use(express.json());
 
 app.use((req, res, next) => {
-  if(toobusy_js()) {
-    logger.warn("Server is busy")
-    res.status(503).json({success: false, message: "Server too busy, try again later."})
+  if (toobusy_js()) {
+    logger.warn("Server is busy");
+    res.status(503).json({ success: false, message: "Server too busy, try again later." });
   } else {
-    next()
+    next();
   }
-})
-
+});
 
 app.use((req, _, next) => {
   logger.info(`Incoming request: ${req.method} ${req.url}`);
   next();
 });
 
-app.use('/home', homePageRouter);
-app.use('/home', addTeamRouter)
-
+app.use('/api/home', homePageRouter);
+app.use('/api/home', addTeamRouter)
 
 app.use((error, req, res, next) => {
     logger.error(`Error: ${error.message}`);
@@ -63,7 +61,5 @@ const startServer = async () => {
     process.exit(1); 
   }
 };
-
-
 
 startServer();
