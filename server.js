@@ -58,11 +58,11 @@ const startServer = async () => {
 		await connectDB();
 		logger.info("Database connection established.");
 		// Start server locally (only for development)
-		if (process.env.STAGE !== "production") {
-			app.listen(PORT, () => {
-				logger.info(`Server is listening on port ${PORT}`);
-			});
-		}
+		// if (process.env.STAGE !== "production") {
+		app.listen(PORT, () => {
+			logger.info(`Server is listening on port ${PORT}`);
+		});
+		// }
 	} catch (error) {
 		logger.error(`Error starting the server: ${error.message}`);
 		process.exit(1);

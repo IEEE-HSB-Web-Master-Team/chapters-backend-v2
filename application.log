@@ -35645,3 +35645,22 @@
 2025-01-23 21:44:26 [[32minfo[39m]: Database connection established.
 2025-01-23 21:44:26 [[32minfo[39m]: Committee found: ras
 2025-01-23 21:44:26 [[32minfo[39m]: Successfully fetched info for committee.
+2025-01-23 22:00:33 [[32minfo[39m]: Incoming request: GET /api/home/committee?committee=ras
+2025-01-23 22:00:35 [[32minfo[39m]: Database connection established.
+2025-01-23 22:00:35 [[32minfo[39m]: Committee found: ras
+2025-01-23 22:00:35 [[32minfo[39m]: Successfully fetched info for committee.
+2025-01-23 22:00:42 [[32minfo[39m]: Incoming request: GET /api/home/committee?committee=ras
+2025-01-23 22:00:44 [[32minfo[39m]: Database connection established.
+2025-01-23 22:00:44 [[32minfo[39m]: Committee found: ras
+2025-01-23 22:00:44 [[32minfo[39m]: Successfully fetched info for committee.
+2025-01-23 22:00:48 [[32minfo[39m]: Incoming request: GET /favicon.ico
+2025-01-23 22:00:55 [[32minfo[39m]: Incoming request: GET /api/home/committee?committee=ras
+2025-01-23 22:00:56 [[32minfo[39m]: Database connection established.
+2025-01-23 22:00:56 [[32minfo[39m]: Committee found: ras
+2025-01-23 22:00:56 [[32minfo[39m]: Successfully fetched info for committee.
+2025-01-23 22:10:37 [[32minfo[39m]: Incoming request: GET /api/home/committee?committee=ras
+2025-01-23 22:10:38 [[32minfo[39m]: Database connection established.
+2025-01-23 22:11:16 [[32minfo[39m]: Incoming request: GET /api/home/committee?committee=ras
+2025-01-23 22:11:17 [[32minfo[39m]: Database connection established.
+2025-01-23 22:11:17 [[32minfo[39m]: Committee found: ras
+2025-01-23 22:11:17 [[32minfo[39m]: Successfully fetched info for committee.
