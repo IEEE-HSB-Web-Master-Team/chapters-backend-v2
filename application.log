@@ -35618,3 +35618,21 @@
 2025-01-23 17:25:44 [[32minfo[39m]: Successfully fetched info for committee.
 2025-01-23 18:38:50 [[32minfo[39m]: Database connection established.
 2025-01-23 18:38:50 [[32minfo[39m]: Server is listening on port 3000
+2025-01-23 18:42:45 [[32minfo[39m]: Database connection established.
+2025-01-23 18:42:45 [[32minfo[39m]: Server is listening on port 3000
+2025-01-23 18:42:54 [[32minfo[39m]: Database connection established.
+2025-01-23 18:42:54 [[32minfo[39m]: Server is listening on port 3000
+2025-01-23 18:43:47 [[32minfo[39m]: Database connection established.
+2025-01-23 18:43:47 [[32minfo[39m]: Server is listening on port 3000
+2025-01-23 18:54:00 [[32minfo[39m]: Incoming request: GET /
+2025-01-23 18:54:09 [[32minfo[39m]: Incoming request: GET /api/home/committee?committee=ras
+2025-01-23 18:54:19 [[31merror[39m]: Error fetching committee: Operation `apps.findOne()` buffering timed out after 10000ms
+2025-01-23 18:54:19 [[31merror[39m]: Error in getCommitte API: Error fetching committee: Operation `apps.findOne()` buffering timed out after 10000ms
+2025-01-23 18:58:30 [[32minfo[39m]: Incoming request: GET /api/home/committee?committee=ras
+2025-01-23 18:58:31 [[32minfo[39m]: Database connection established.
+2025-01-23 18:58:31 [[32minfo[39m]: Committee found: ras
+2025-01-23 18:58:31 [[32minfo[39m]: Successfully fetched info for committee.
+2025-01-23 18:58:38 [[32minfo[39m]: Incoming request: GET /api/home/committee?committee=ras
+2025-01-23 18:58:39 [[32minfo[39m]: Database connection established.
+2025-01-23 18:58:39 [[32minfo[39m]: Committee found: ras
+2025-01-23 18:58:39 [[32minfo[39m]: Successfully fetched info for committee.

@@ -50,13 +50,19 @@ app.use((error, req, res, next) => {
 	});
 });
 
+// Export the app for Vercel
+export default app;
+
 const startServer = async () => {
 	try {
 		await connectDB();
 		logger.info("Database connection established.");
-		app.listen(PORT, () => {
-			logger.info(`Server is listening on port ${PORT}`);
-		});
+		// Start server locally (only for development)
+		if (process.env.STAGE !== "production") {
+			app.listen(PORT, () => {
+				logger.info(`Server is listening on port ${PORT}`);
+			});
+		}
 	} catch (error) {
 		logger.error(`Error starting the server: ${error.message}`);
 		process.exit(1);
