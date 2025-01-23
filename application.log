@@ -35604,3 +35604,8 @@
 2024-12-16 18:49:10 [[32minfo[39m]: Incoming request: GET /home/committee?committee=cs
 2024-12-16 18:49:10 [[32minfo[39m]: Committee found: cs
 2024-12-16 18:49:10 [[32minfo[39m]: Successfully fetched info for committee.
+2025-01-23 17:16:47 [[32minfo[39m]: Database connection established.
+2025-01-23 17:16:47 [[32minfo[39m]: Server is listening on port 3000
+2025-01-23 17:16:50 [[32minfo[39m]: Incoming request: GET /api/home/committee?committee=ras
+2025-01-23 17:16:50 [[32minfo[39m]: Committee found: ras
+2025-01-23 17:16:50 [[32minfo[39m]: Successfully fetched info for committee.
