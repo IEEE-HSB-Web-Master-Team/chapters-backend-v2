@@ -6,7 +6,6 @@ import addTeamRouter from "./routes/addTeamRoute.js";
 import { logger } from "./config/logger.js";
 import toobusy_js from "toobusy-js";
 import helmet from "helmet";
-// import App from "./models/homePageModel.js";
 
 configDotenv();
 
@@ -65,4 +64,3 @@ const startServer = async () => {
 };
 
 startServer();
-export default app;
