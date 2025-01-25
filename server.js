@@ -6,7 +6,7 @@ import addTeamRouter from "./routes/addTeamRoute.js";
 import { logger } from "./config/logger.js";
 import toobusy_js from "toobusy-js";
 import helmet from "helmet";
-
+import cors from "cors";
 configDotenv();
 
 const PORT = process.env.PORT || 5000;
