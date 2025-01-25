@@ -33,6 +33,8 @@ app.use((req, _, next) => {
 	next();
 });
 
+app.use(cors()); // Allows requests from any origin
+
 app.use("/api/home", homePageRouter);
 app.use("/api/home", addTeamRouter);
 
