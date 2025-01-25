@@ -35670,3 +35670,25 @@
 2025-01-25 14:39:46 [[32minfo[39m]: Database connection established.
 2025-01-25 14:39:46 [[32minfo[39m]: Server is listening on port 3000
 2025-01-25 14:39:46 [[32minfo[39m]: Incoming request: GET /
+2025-01-25 14:48:21 [[32minfo[39m]: Database connection established.
+2025-01-25 14:48:55 [[32minfo[39m]: Database connection established.
+2025-01-25 14:48:55 [[32minfo[39m]: Server is listening on port 3001
+2025-01-25 14:48:55 [[32minfo[39m]: Database connection established.
+2025-01-25 14:49:11 [[32minfo[39m]: Incoming request: GET /
+2025-01-25 14:49:28 [[32minfo[39m]: Incoming request: GET /api/home/committee?committee=ras
+2025-01-25 14:49:28 [[32minfo[39m]: Committee found: ras
+2025-01-25 14:49:28 [[32minfo[39m]: Successfully fetched info for committee.
+2025-01-25 14:49:28 [[32minfo[39m]: Incoming request: GET /favicon.ico
+2025-01-25 14:50:27 [[32minfo[39m]: Database connection established.
+2025-01-25 14:50:27 [[32minfo[39m]: Server is listening on port 3001
+2025-01-25 14:50:43 [[32minfo[39m]: Database connection established.
+2025-01-25 14:50:43 [[32minfo[39m]: Server is listening on port 3001
+2025-01-25 14:51:06 [[32minfo[39m]: Database connection established.
+2025-01-25 14:51:06 [[32minfo[39m]: Server is listening on port 3001
+2025-01-25 14:51:17 [[32minfo[39m]: Database connection established.
+2025-01-25 14:51:17 [[32minfo[39m]: Server is listening on port 3001
+2025-01-25 14:51:19 [[32minfo[39m]: Incoming request: GET /api/home/committee?committee=ras
+2025-01-25 14:51:19 [[32minfo[39m]: Committee found: ras
+2025-01-25 14:51:19 [[32minfo[39m]: Successfully fetched info for committee.
+2025-01-25 14:51:27 [[32minfo[39m]: Database connection established.
+2025-01-25 14:51:27 [[32minfo[39m]: Server is listening on port 3001
