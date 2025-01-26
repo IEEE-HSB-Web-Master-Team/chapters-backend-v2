@@ -1,7 +1,9 @@
 import Joi from "joi";
 
 export const addTeamSchema = Joi.object({
-  committe: Joi.string().valid("pes", "ras", "cs").required().messages({
+  committe: Joi.string()
+  // .valid("pes", "ras", "cs")
+  .required().messages({
     "string.base": "Committee must be a string.",
     "string.empty": "Committee is required.",
     "any.required": "Committee is required.",

@@ -106,5 +106,41 @@
       "mission": "To foster innovation and leadership in the field of technology.",
       "vision": "To create a diverse, collaborative environment for students and professionals."
     }
+  },
+  {
+    "committee": "home",
+    "colors": {
+      "light": {
+        "primary": "#FFFFFF",
+        "secondary": "#000000",
+        "background": "#F0F0F0",
+        "text": "#333333"
+      },
+      "dark": {
+        "primary": "#000000",
+        "secondary": "#FFFFFF",
+        "background": "#181818",
+        "text": "#CCCCCC"
+      }
+    },
+    "social_media_links": {
+      "facebook": "https://facebook.com/home",
+      "insta": "https://instagram.com/home"
+    },
+    "home_page": {
+      "about_us": {
+        "description": "Welcome to the home committee, the central hub of all activities."
+      },
+      "mega_events": {
+        "description": "The home committee organizes events to unite and inspire the entire community."
+      },
+      "why_join": {
+        "description": "Join the home committee to connect with others and make an impact."
+      }
+    },
+    "about_page": {
+      "mission": "To create a welcoming and inclusive environment for all members.",
+      "vision": "To be the backbone of all committees and drive collective growth."
+    }
   }
 ]

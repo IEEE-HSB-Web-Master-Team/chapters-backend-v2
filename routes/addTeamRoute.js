@@ -7,4 +7,10 @@ const router = express.Router();
 
 router.post('/add-team', validateRequest(addTeamSchema), teamController.addTeam);
 
+router.get('/teams', teamController.getTeams);
+
+router.patch('/teams', teamController.updateTeam)
+
+router.delete('/teams', teamController.deleteTeam)
+
 export default router;
