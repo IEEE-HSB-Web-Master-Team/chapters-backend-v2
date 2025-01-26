@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "3a9805c9-606f-4907-a1a8-1c986111cd85",
+		"name": "IEEE chapters",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30516823",
+		"_collection_link": "https://ieee33.postman.co/workspace/e-commerce-ieee~42624770-98d4-461b-ad24-f2d4e97c4e1d/collection/30516823-3a9805c9-606f-4907-a1a8-1c986111cd85?action=share&source=collection_link&creator=30516823"
+	},
+	"item": [
+		{
+			"name": "getCommittee",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/home/committee?committee=ras",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home",
+						"committee"
+					],
+					"query": [
+						{
+							"key": "committee",
+							"value": "ras"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addTeam",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"committe\": \"cs\",\r\n  \"teamName\": \"Innovatorxs\",\r\n  \"teamMember1\": \"John Doe\",\r\n  \"teamMember2\": \"Jane Smith\",\r\n  \"teamMember3\": \"Michael Brown\",\r\n  \"teamMember4\": \"Emily Davis\",\r\n  \"teamMember5\": \"Anna Taylor\",\r\n  \"teamMember6\": \"Chris Johnson\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/home/add-team",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home",
+						"add-team"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getHome",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

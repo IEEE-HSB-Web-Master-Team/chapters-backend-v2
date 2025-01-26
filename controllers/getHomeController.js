@@ -44,6 +44,44 @@ const getHomePageController = {
       res.status(500).json({ success: false, error: "Internal Server Error." });
     }
   },
+
+  uploadMegaEvents: async (req, res, next) => {
+    try {
+      if (!req.files || req.files.length === 0) {
+        return res.status(400).json({ error: "No files uploaded" });
+      }
+  
+      const filePaths = req.files.map(file => file.path); 
+  
+      await HomePageService.uploadMegaEvents(filePaths);
+  
+      res.status(200).json({
+        message: "Mega events uploaded successfully!"
+      });
+    } catch (error) {
+      console.error("Error uploading mega events:", error);
+      res.status(500).json({ error: "Failed to upload mega events" });
+    }
+  },
+
+  uploadCompetition: async (req, res, next) => {
+    try {
+      if (!req.files || req.files.length === 0) {
+        return res.status(400).json({ error: "No files uploaded" });
+      }
+  
+      const filePaths = req.files.map(file => file.path); 
+  
+      await HomePageService.uploadCompetitionImages(filePaths);
+  
+      res.status(200).json({
+        message: "Competition images uploaded successfully!",
+      });
+    } catch (error) {
+      console.error("Error uploading competition images:", error);
+      res.status(500).json({ error: "Failed to upload competition images" });
+    }
+  }
 };
 
 export default getHomePageController;

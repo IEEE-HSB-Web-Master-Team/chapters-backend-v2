@@ -13,6 +13,19 @@ const homePageSchema = new Schema({
     },
     mega_events: {
         description: { type: String, required: false },
+        images: {
+            type: [String],
+            required: false
+        }
+    },
+    competition: {
+        images: {
+            type: [String],
+            required: false
+        }
+    },
+    reviews: {
+        description: { type: String, required: false },
     },
     why_join: {
         description: { type: String, required: false },
