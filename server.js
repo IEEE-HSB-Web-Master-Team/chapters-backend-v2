@@ -10,7 +10,7 @@ import { fileURLToPath } from "url";
 import fs from "fs";
 import cors from "cors";
 import helmet from "helmet";
-import cors from "cors";
+
 import App from "./models/homePageModel.js";
 
 const __filename = fileURLToPath(import.meta.url);
