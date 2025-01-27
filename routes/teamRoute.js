@@ -1,6 +1,6 @@
 import express from "express";
 import { validateRequest } from "../middlewares/teamValidation.js";
-import teamController from "../controllers/addTeamController.js";
+import teamController from "../controllers/teamController.js";
 import { addTeamSchema } from "../validationScehma/addTeamSchema.js"
 
 const router = express.Router();
