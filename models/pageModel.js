@@ -25,7 +25,11 @@ const homePageSchema = new Schema({
         }
     },
     reviews: {
-        description: { type: String, required: false },
+        type: [{
+            review: String,
+            author: String,
+            jobTitle: String
+        }]
     },
     why_join: {
         description: { type: String, required: false },
