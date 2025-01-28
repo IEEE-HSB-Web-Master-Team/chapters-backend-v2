@@ -54,7 +54,7 @@ const pageController = {
         return res.status(400).json({ success: false, error: "No files uploaded" });
       }
   
-      const filePaths = req.files.map(file => `/assets/${folderName}/${file.filename}`);
+      const filePaths = req.files.map(file => `/assets/${folderName}/mega_events/${file.filename}`);
   
       await PageService.uploadMegaEvents(filePaths, committee);
   
@@ -78,7 +78,7 @@ const pageController = {
         return res.status(400).json({ success: false, error: "No files uploaded" });
       }
   
-      const filePaths = req.files.map(file => `/assets/${folderName}/${file.filename}`);
+      const filePaths = req.files.map(file => `/assets/${folderName}/competition/${file.filename}`);
   
       await PageService.uploadCompetitionImages(filePaths, committee);
   
