@@ -9,6 +9,7 @@ const socialMediaLinksSchema = new Schema({
 
 const homePageSchema = new Schema({
     about_us: {
+        
         description: { type: String, required: false },
     },
     mega_events: {
@@ -42,16 +43,23 @@ const homePageSchema = new Schema({
 
 const colorSchema = new Schema({
     light: {
-        primary: { type: String, default: "#4A90E2" },
-        secondary: { type: String, default: "#50E3C2" },
-        background: { type: String, default: "#F5F5F5" },
+        primary: { type: String, default: "#a11616" },
+        secondary: { type: String, default: "#671718" },
+        primaryLight: { type: String, default: "#ffded9" },
+        background: { type: String, default: "#ffffff" },
+        section: { type: String, default: "#fff9f9" },
         text: { type: String, default: "#333333" },
+        wText: { type: String, default: "#ffffff" },
+        bText: { type: String, default: "#000000" },
     },
     dark: {
-        primary: { type: String, default: "#1A73E8" },
-        secondary: { type: String, default: "#34A853" },
-        background: { type: String, default: "#121212" },
-        text: { type: String, default: "#FFFFFF" },
+        primary: { type: String, default: "#ff4d4d" },
+        secondary: { type: String, default: "#a11616" },
+        background: { type: String, default: "#1a0000" },
+        section: { type: String, default: "#2e0000" },
+        text: { type: String, default: "#ffcccc" },
+        wText: { type: String, default: "#ffffff" },
+        bText: { type: String, default: "#330000" },
     },
 });
 

@@ -14,6 +14,8 @@ router.post('/competition', upload.array('images'), pageController.uploadCompeti
 
 router.post('/committee-logo', upload.single('logo'), pageController.uploadCommitteeLogo)
 
+// router.post('/about-us', upload.array('images'))
+
 router.post('/reviews', pageController.uploadReviews)
 
 export default router
