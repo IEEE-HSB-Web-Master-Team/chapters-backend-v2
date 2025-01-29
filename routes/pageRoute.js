@@ -12,6 +12,10 @@ router.post('/mega-events', upload.array('images'), pageController.uploadMegaEve
 
 router.post('/competition', upload.array('images'), pageController.uploadCompetition)
 
+router.post('/committee-logo', upload.single('logo'), pageController.uploadCommitteeLogo)
+
+// router.post('/about-us', upload.array('images'))
+
 router.post('/reviews', pageController.uploadReviews)
 
 export default router
