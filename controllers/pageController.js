@@ -70,7 +70,6 @@ const pageController = {
   },
 
   uploadCompetition: async (req, res, next) => {
-
     const { folderName, committee } = req.query
 
     try {
@@ -96,14 +95,11 @@ const pageController = {
   uploadReviews: async(req, res, next) => {
     const { committee } = req.query
     const { review, author, jobTitle } = req.body;
-    console.log(committee)
-    console.log(req.body)
     
     if (!committee || !review || !author || !jobTitle) {
       logger.error("Missing required fields for review upload.");
       return res.status(400).json({ success: false, error: "Missing required fields." });
     }
-
 
     try {
       const reviewData = { review, author, jobTitle };
@@ -117,6 +113,37 @@ const pageController = {
     } catch (error) {
         logger.error(`Error uploading review: ${error.message}`);
         res.status(500).json({ success: false, error: "Failed to upload review." });
+    }
+  },
+
+  uploadCommitteeLogo: async (req, res, next) => {
+    const { folderName, committee } = req.query;
+
+    try {
+        if (!req.file) {
+            return res.status(400).json({ success: false, error: "No file uploaded" });
+        }
+
+        if (!folderName) {
+            return res.status(400).json({ success: false, error: "Missing folderName" });
+        }
+
+        const filePath = `/assets/${folderName}/committee_logo/${req.file.filename}`;  
+
+        if (!committee) {
+            return res.status(400).json({ success: false, error: "Missing committee parameter" });
+        }
+
+        const updatedPage = await PageService.uploadCommitteeLogo(filePath, committee);
+
+        return res.status(200).json({
+            success: true,
+            newLogo: updatedPage
+        });
+
+    } catch (err) {
+        console.error(`Error uploading committee logo: ${err.message}`);
+        return res.status(500).json({ success: false, error: "Failed to upload logo." });
     }
   }
 };

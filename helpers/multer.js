@@ -15,8 +15,6 @@ const storage = diskStorage({
         const urlWithoutQueries = req.originalUrl.slice(0, req.originalUrl.indexOf('?'))
         const subFolderName = urlWithoutQueries.split('/').pop()
 
-        console.log(_.snakeCase(subFolderName))
-
         const folderPath = path.join(__dirname, '..', 'public', 'assets', safeFolderName, _.snakeCase(subFolderName));
 
         if (!fs.existsSync(folderPath)) {

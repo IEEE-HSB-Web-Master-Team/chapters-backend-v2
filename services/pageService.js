@@ -92,6 +92,25 @@ class PageService {
             throw new Error(`Error uploading competition images: ${err.message}`);
         }
     }
+
+    static async uploadCommitteeLogo(filePath, committeeName) {
+        try {
+            const updatedCommittee = await App.findOneAndUpdate(
+                { committee: committeeName },  
+                { $set: { logo: filePath } },  
+                { new: true, upsert: false }   
+            );
+    
+            if (!updatedCommittee) {
+                throw new Error("Committee not found.");
+            }
+    
+            return updatedCommittee;
+        } catch (err) {
+            console.error("Error updating committee logo:", err);
+            throw err;
+        }
+    }
 }
 
 export default PageService;

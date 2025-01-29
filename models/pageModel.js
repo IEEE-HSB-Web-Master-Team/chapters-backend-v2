@@ -32,7 +32,11 @@ const homePageSchema = new Schema({
         }]
     },
     why_join: {
-        description: { type: String, required: false },
+        main_title: {
+            type: String,
+            default: "why choose IEEE helwan"
+        }, 
+        description: [{ type: String }] 
     },
 });
 
@@ -57,7 +61,10 @@ const appSchema = new Schema({
         unique: true, 
         lowercase: true, 
         required: true, 
-        enum: ["ras", "cs", 'pes'] 
+        // enum: ["ras", "cs", 'pes'] 
+    },
+    logo: {
+        type: String
     },
     colors: colorSchema, 
     social_media_links: socialMediaLinksSchema,  
