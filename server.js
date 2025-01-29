@@ -1,17 +1,14 @@
 import express from "express";
 import { connectDB } from "./config/database.js";
 import { configDotenv } from "dotenv";
-import homePageRouter from "./routes/getHomeRoute.js";
-import addTeamRouter from "./routes/addTeamRoute.js";
+import homePageRouter from "./routes/pageRoute.js";
+import addTeamRouter from "./routes/teamRoute.js";
 import { logger } from "./config/logger.js";
 import toobusy_js from "toobusy-js";
 import path from "path";
 import { fileURLToPath } from "url";
-import fs from "fs";
 import cors from "cors";
 import helmet from "helmet";
-
-import App from "./models/homePageModel.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -26,7 +23,7 @@ app.use(helmet());
 toobusy_js.maxLag(200);
 
 app.use(express.json());
-app.use("/assets", express.static(path.join("..", "public", "assets"))); // maybe the error of getting images because of this!!
+app.use("/assets", express.static(path.join(__dirname, "public", "assets")));
 app.use(cors());
 
 app.use((req, res, next) => {

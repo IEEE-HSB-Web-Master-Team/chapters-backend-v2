@@ -92,6 +92,120 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "getTeams",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/home/teams",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home",
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addAssetsToEachCommittee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "images",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "images",
+							"type": "file",
+							"src": [
+								"/D:/ch__2.png",
+								"/D:/ch1__.png",
+								"/D:/br40.png"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/home/competition?folderName=pesFolder&committee=pes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home",
+						"competition"
+					],
+					"query": [
+						{
+							"key": "folderName",
+							"value": "pesFolder"
+						},
+						{
+							"key": "committee",
+							"value": "pes"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "uploadReviews",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"review\": \"This is a great committee!\",\r\n  \"author\": \"John Doe\",\r\n  \"jobTitle\": \"Software Engineer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/home/reviews?committee=ras",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home",
+						"reviews"
+					],
+					"query": [
+						{
+							"key": "committee",
+							"value": "ras"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
