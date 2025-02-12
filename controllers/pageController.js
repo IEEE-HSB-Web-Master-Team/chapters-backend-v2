@@ -4,7 +4,6 @@ import { logger } from "../config/logger.js";
 const pageController = {
   getCommittee: async (req, res, next) => {
     let { committee } = req.query;
-
     committee = committee ? committee.trim() : "";
 
     if (!committee) {
@@ -14,7 +13,6 @@ const pageController = {
 
     try {
       const committeeInfo = await PageService.getPageInfo(committee);
-
       if (!committeeInfo) {
         logger.error(`Committee '${committee}' does not exist.`);
         return res.status(404).json({ success: false, error: "Committee not found." });
@@ -24,14 +22,39 @@ const pageController = {
       res.status(200).json({ success: true, committeeInfo });
     } catch (error) {
       logger.error(`Error in getCommittee API: ${error.message}`);
-      res.status(500).json({ success: false, error: "Internal Server Error." });
+      next(error);
+    }
+  },
+
+  addCommittee: async (req, res, next) => {
+    try {
+      const { committee, logo, colors, socialMediaLinks, homePage, aboutPage, events } = req.body;
+
+      const newCommittee = await PageService.addCommittee({
+        committee,
+        logo,
+        colors,
+        socialMediaLinks,
+        homePage,
+        aboutPage,
+        events
+      });
+
+      return res.status(201).json({
+        success: true,
+        message: "Committee added successfully",
+        committee: newCommittee
+      });
+
+    } catch (error) {
+      logger.error(`Error adding committee: ${error.message}`);
+      next(error);
     }
   },
 
   getHomePage: async (req, res, next) => {
     try {
-      const homePageInfo = await PageService.getPageInfo('home');
-      
+      const homePageInfo = await PageService.getPageInfo("home");
       if (!homePageInfo) {
         logger.error("Home page info not found.");
         return res.status(404).json({ success: false, error: "Home page not found." });
@@ -41,61 +64,68 @@ const pageController = {
       res.status(200).json({ success: true, homePageInfo });
     } catch (error) {
       logger.error(`Error in getHomePage API: ${error.message}`);
-      res.status(500).json({ success: false, error: "Internal Server Error." });
+      next(error);
     }
   },
 
   uploadMegaEvents: async (req, res, next) => {
-
-    const { folderName, committee } = req.query
-
+    const { folderName, committee } = req.query;
+    const { title, date } = req.body;
     try {
       if (!req.files || req.files.length === 0) {
         return res.status(400).json({ success: false, error: "No files uploaded" });
       }
-  
-      const filePaths = req.files.map(file => `/assets/${folderName}/mega_events/${file.filename}`);
-  
+
+      const filePaths = req.files.map(file => ({
+        title, 
+        image: `/assets/${folderName}/mega_events/${file.filename}`,       
+        date,         
+      }));
+
       await PageService.uploadMegaEvents(filePaths, committee);
-  
+
       res.status(200).json({
         success: true,
         message: "Mega events uploaded successfully!",
-        filePaths, 
+        filePaths
       });
     } catch (error) {
       logger.error(`Error uploading mega events: ${error.message}`);
-      res.status(500).json({ success: false, error: "Failed to upload mega events" });
+      next(error);
     }
   },
 
   uploadCompetition: async (req, res, next) => {
-    const { folderName, committee } = req.query
-
+    const { folderName, committee } = req.query;
+    const { title, date } = req.body;
     try {
       if (!req.files || req.files.length === 0) {
         return res.status(400).json({ success: false, error: "No files uploaded" });
       }
-  
-      const filePaths = req.files.map(file => `/assets/${folderName}/competition/${file.filename}`);
-  
+
+      const filePaths = req.files.map(file => ({
+        title, 
+        image: `/assets/${folderName}/competition/${file.filename}`,       
+        date,         
+      }));
+
       await PageService.uploadCompetitionImages(filePaths, committee);
-  
+
       res.status(200).json({
         success: true,
         message: "Competition images uploaded successfully!",
-        filePaths,
+        filePaths
       });
     } catch (error) {
       logger.error(`Error uploading competition images: ${error.message}`);
-      res.status(500).json({ success: false, error: "Failed to upload competition images" });
+      next(error);
     }
   },
 
-  uploadReviews: async(req, res, next) => {
-    const { committee } = req.query
+  uploadReviews: async (req, res, next) => {
+    const { committee } = req.query;
     const { review, author, jobTitle } = req.body;
-    
+
     if (!committee || !review || !author || !jobTitle) {
       logger.error("Missing required fields for review upload.");
       return res.status(400).json({ success: false, error: "Missing required fields." });
@@ -106,13 +136,13 @@ const pageController = {
       const updatedCommittee = await PageService.uploadReviews(reviewData, committee);
 
       res.status(200).json({
-          success: true,
-          message: "Review uploaded successfully!",
-          committeeInfo: updatedCommittee,
+        success: true,
+        message: "Review uploaded successfully!",
+        committeeInfo: updatedCommittee
       });
     } catch (error) {
-        logger.error(`Error uploading review: ${error.message}`);
-        res.status(500).json({ success: false, error: "Failed to upload review." });
+      logger.error(`Error uploading review: ${error.message}`);
+      next(error);
     }
   },
 
@@ -120,30 +150,75 @@ const pageController = {
     const { folderName, committee } = req.query;
 
     try {
-        if (!req.file) {
-            return res.status(400).json({ success: false, error: "No file uploaded" });
-        }
+      if (!req.file) {
+        return res.status(400).json({ success: false, error: "No file uploaded" });
+      }
 
-        if (!folderName) {
-            return res.status(400).json({ success: false, error: "Missing folderName" });
-        }
+      if (!folderName) {
+        return res.status(400).json({ success: false, error: "Missing folderName" });
+      }
 
-        const filePath = `/assets/${folderName}/committee_logo/${req.file.filename}`;  
+      const filePath = `/assets/${folderName}/committee_logo/${req.file.filename}`;
 
-        if (!committee) {
-            return res.status(400).json({ success: false, error: "Missing committee parameter" });
-        }
+      if (!committee) {
+        return res.status(400).json({ success: false, error: "Missing committee parameter" });
+      }
 
-        const updatedPage = await PageService.uploadCommitteeLogo(filePath, committee);
+      const updatedPage = await PageService.uploadCommitteeLogo(filePath, committee);
 
-        return res.status(200).json({
-            success: true,
-            newLogo: updatedPage
-        });
+      return res.status(200).json({
+        success: true,
+        newLogo: updatedPage
+      });
 
-    } catch (err) {
-        console.error(`Error uploading committee logo: ${err.message}`);
-        return res.status(500).json({ success: false, error: "Failed to upload logo." });
+    } catch (error) {
+      logger.error(`Error uploading committee logo: ${error.message}`);
+      next(error);
+    }
+  },
+
+  updateCommittee: async (req, res, next) => {
+    const { committeeName } = req.params;
+    const updateData = req.body;
+
+    try {
+      const updatedCommittee = await PageService.updateCommittee(committeeName, updateData);
+
+      if (!updatedCommittee) {
+        logger.error(`Committee '${committeeName}' not found.`);
+        return res.status(404).json({ success: false, error: "Committee not found." });
+      }
+
+      res.status(200).json({
+        success: true,
+        message: "Committee updated successfully",
+        updatedCommittee
+      });
+    } catch (error) {
+      logger.error(`Error updating committee: ${error.message}`);
+      next(error);
+    }
+  },
+
+  deleteCommittee: async (req, res, next) => {
+    const { committeeName } = req.params;
+
+    try {
+      const deletedCommittee = await PageService.deleteCommittee(committeeName);
+
+      if (!deletedCommittee) {
+        logger.error(`Committee '${committeeName}' not found.`);
+        return res.status(404).json({ success: false, error: "Committee not found." });
+      }
+
+      res.status(200).json({
+        success: true,
+        message: "Committee deleted successfully",
+        deletedCommittee
+      });
+    } catch (error) {
+      logger.error(`Error deleting committee: ${error.message}`);
+      next(error);
     }
   }
 };

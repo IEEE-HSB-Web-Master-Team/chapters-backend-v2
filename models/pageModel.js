@@ -7,38 +7,90 @@ const socialMediaLinksSchema = new Schema({
     insta: { type: String, required: false },
 });
 
+const reviewSchema = new Schema({
+    review: String,
+    author: String,
+    jobTitle: String
+});
+
+const imageSchema = new Schema({
+    title: String,
+    image: String,
+    date: String
+});
+
 const homePageSchema = new Schema({
-    about_us: {
-        
+    aboutUs: {
         description: { type: String, required: false },
     },
-    mega_events: {
+    megaEvents: {
         description: { type: String, required: false },
-        images: {
-            type: [String],
-            required: false
-        }
+        images: [imageSchema]
     },
     competition: {
-        images: {
-            type: [String],
-            required: false
-        }
+        images: [imageSchema]
     },
-    reviews: {
-        type: [{
-            review: String,
-            author: String,
-            jobTitle: String
-        }]
+    reviews: [reviewSchema],
+    whyJoin: {
+        mainTitle: { type: String, default: "Why Choose IEEE Helwan" },
+        description: [{ type: String }]
+    }
+});
+
+const visionSchema = new Schema({
+    title: String,
+    description: {
+        mission: String,
+        vision: String
+    }
+});
+
+const historySchema = new Schema({
+    date: String,
+    description: String,
+    image: String
+});
+
+const teamMemberSchema = new Schema({
+    name: String,
+    jobTitle: String,
+    image: String
+});
+
+const aboutPageSchema = new Schema({
+    hero: {
+        title: String,
+        description: String
     },
-    why_join: {
-        main_title: {
-            type: String,
-            default: "why choose IEEE helwan"
-        }, 
-        description: [{ type: String }] 
+    vision: visionSchema,
+    history: {
+        title: String,
+        description: [historySchema]
     },
+    team: {
+        title: String,
+        members: [teamMemberSchema]
+    }
+});
+
+const eventSchema = new Schema({
+    location: String,
+    date: Date,
+    name: String,
+    description: String,
+    mainImage: String,
+    images: [String]
+});
+
+const eventsSchema = new Schema({
+    megaEvents: {
+        description: { title: String },
+        images: [imageSchema]
+    },
+    timeline: {
+        dates: [Number],
+        events: [eventSchema]
+    }
 });
 
 const colorSchema = new Schema({
@@ -64,20 +116,18 @@ const colorSchema = new Schema({
 });
 
 const appSchema = new Schema({
-    committee: { 
-        type: String, 
-        unique: true, 
-        lowercase: true, 
-        required: true, 
-        // enum: ["ras", "cs", 'pes'] 
+    committee: {
+        type: String,
+        unique: true,
+        lowercase: true,
+        required: true,
     },
-    logo: {
-        type: String
-    },
-    colors: colorSchema, 
-    social_media_links: socialMediaLinksSchema,  
-    home_page: homePageSchema,  
-    about_page: { type: Object, default: {} }, 
+    logo: { type: String },
+    colors: colorSchema,
+    socialMediaLinks: socialMediaLinksSchema,
+    homePage: homePageSchema,
+    aboutPage: aboutPageSchema,
+    events: eventsSchema
 });
 
 const App = mongoose.model("App", appSchema);

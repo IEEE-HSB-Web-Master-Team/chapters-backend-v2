@@ -18,6 +18,25 @@ class PageService {
         } 
     }
 
+    static async addCommittee({ committee, logo, colors, socialMediaLinks, homePage, aboutPage, events }) {
+        try {
+            const newCommittee = new App({
+                committee,
+                logo,
+                colors,
+                socialMediaLinks,
+                homePage,
+                aboutPage,
+                events
+            });
+
+            await newCommittee.save();
+            return newCommittee;
+        } catch (error) {
+            throw new Error("Error adding committee: " + error.message);
+        }
+    }
+
     static async uploadReviews(reviewData, committeeName) {
         try {
             const updatedCommittee = await App.findOneAndUpdate(
@@ -49,7 +68,7 @@ class PageService {
                 { committee: committeeName },  
                 {
                     $push: {
-                        'home_page.mega_events.images': { $each: filePaths }, 
+                        'homePage.megaEvents.images': { $each: filePaths }, 
                     }
                 },
                 { new: true, upsert: true } 
@@ -74,7 +93,7 @@ class PageService {
                 { committee: committeeName },  
                 {
                     $push: {
-                        'home_page.competition.images': { $each: filePaths }, 
+                        'homePage.competition.images': { $each: filePaths }, 
                     }
                 },
                 { new: true, upsert: true }
@@ -109,6 +128,38 @@ class PageService {
         } catch (err) {
             console.error("Error updating committee logo:", err);
             throw err;
+        }
+    }
+
+    static async updateCommittee(committeeName, updateData) {
+        try {
+            const updatedCommittee = await App.findOneAndUpdate(
+                { committee: committeeName.toLowerCase() },
+                { $set: updateData },
+                { new: true }
+            );
+
+            if (!updatedCommittee) {
+                throw new Error('Committee not found.');
+            }
+
+            return updatedCommittee;
+        } catch (error) {
+            throw new Error(`Error updating committee: ${error.message}`);
+        }
+    }
+
+    static async deleteCommittee(committeeName) {
+        try {
+            const deletedCommittee = await App.findOneAndDelete({ committee: committeeName.toLowerCase() });
+
+            if (!deletedCommittee) {
+                throw new Error('Committee not found.');
+            }
+
+            return deletedCommittee;
+        } catch (error) {
+            throw new Error(`Error deleting committee: ${error.message}`);
         }
     }
 }
