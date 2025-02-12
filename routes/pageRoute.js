@@ -9,7 +9,7 @@ router.get('/committee', pageController.getCommittee)
 
 router.get('', pageController.getHomePage)
 
-router.use(Auth)
+// router.use(Auth)
 
 router.post('/committee', pageController.addCommittee)
 
