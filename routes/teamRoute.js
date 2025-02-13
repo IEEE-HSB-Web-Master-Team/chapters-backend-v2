@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.post('/add-team', validateRequest(addTeamSchema), teamController.addTeam);
 
-// router.use(Auth)
+router.use(Auth)
 
 router.get('/teams', teamController.getTeams);
 

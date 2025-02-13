@@ -9,7 +9,7 @@ router.get('/committee', pageController.getCommittee)
 
 router.get('', pageController.getHomePage)
 
-// router.use(Auth)
+router.use(Auth)
 
 router.post('/committee', pageController.addCommittee)
 
@@ -23,7 +23,14 @@ router.post('/competition', upload.array('images'), pageController.uploadCompeti
 
 router.post('/committee-logo', upload.single('logo'), pageController.uploadCommitteeLogo) 
 
-// router.post('/about-us', upload.array('images'))
+router.post('/history', upload.array('images'), pageController.uploadHistory) 
+
+router.post('/ieee-teamMembers', upload.array('images'), pageController.uploadIeeeTeamMembers)
+
+// ? WTF!
+// router.post('/events', upload.array('images'), pageController.uploadEvents)
+
+router.delete('/image/:imageID', pageController.deleteImage)
 
 router.post('/reviews', pageController.uploadReviews)
 

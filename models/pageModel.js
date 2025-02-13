@@ -75,7 +75,7 @@ const aboutPageSchema = new Schema({
 
 const eventSchema = new Schema({
     location: String,
-    date: Date,
+    date: String,
     name: String,
     description: String,
     mainImage: String,
@@ -88,7 +88,7 @@ const eventsSchema = new Schema({
         images: [imageSchema]
     },
     timeline: {
-        dates: [Number],
+        dates: [String],
         events: [eventSchema]
     }
 });
