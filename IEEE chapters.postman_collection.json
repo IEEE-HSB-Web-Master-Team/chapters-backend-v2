@@ -38,24 +38,15 @@
 			"response": []
 		},
 		{
-			"name": "addTeam",
+			"name": "deleteAnyImage",
 			"request": {
 				"auth": {
 					"type": "noauth"
 				},
-				"method": "POST",
+				"method": "DELETE",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"committe\": \"cs\",\r\n  \"teamName\": \"Innovatorxs\",\r\n  \"teamMember1\": \"John Doe\",\r\n  \"teamMember2\": \"Jane Smith\",\r\n  \"teamMember3\": \"Michael Brown\",\r\n  \"teamMember4\": \"Emily Davis\",\r\n  \"teamMember5\": \"Anna Taylor\",\r\n  \"teamMember6\": \"Chris Johnson\"\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:3000/api/home/add-team",
+					"raw": "http://localhost:3000/api/home/image/67aca9adae9eaa79388f5102?committee=ieee helwan",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -64,30 +55,14 @@
 					"path": [
 						"api",
 						"home",
-						"add-team"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "getHome",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/home",
-					"protocol": "http",
-					"host": [
-						"localhost"
+						"image",
+						"67aca9adae9eaa79388f5102"
 					],
-					"port": "3000",
-					"path": [
-						"api",
-						"home"
+					"query": [
+						{
+							"key": "committee",
+							"value": "ieee helwan"
+						}
 					]
 				}
 			},
@@ -135,15 +110,15 @@
 							"key": "images",
 							"type": "file",
 							"src": [
-								"/D:/ch__2.png",
-								"/D:/ch1__.png",
-								"/D:/br40.png"
+								"/D:/me.jpg",
+								"/D:/me2.jpg",
+								"/D:/meAlex.jpg"
 							]
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/home/competition?folderName=pesFolder&committee=pes",
+					"raw": "http://localhost:3000/api/home/competition?folderName=rasDir&committee=ras",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -157,11 +132,11 @@
 					"query": [
 						{
 							"key": "folderName",
-							"value": "pesFolder"
+							"value": "rasDir"
 						},
 						{
 							"key": "committee",
-							"value": "pes"
+							"value": "ras"
 						}
 					]
 				}
@@ -198,6 +173,469 @@
 						"reviews"
 					],
 					"query": [
+						{
+							"key": "committee",
+							"value": "ras"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addTeam",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"committe\": \"ras\",\r\n    \"teamName\": \"test233team\",\r\n    \"teamMember1\":  \"x\",\r\n    \"teamMember2\":  \"x3\",\r\n    \"teamMember3\":  \"x2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/home/add-team",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home",
+						"add-team"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addCommittee",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"committee\": \"IEEE Helwan\",\r\n  \"logo\": \"https://example.com/logo.png\",\r\n  \"colors\": {\r\n    \"light\": {\r\n      \"primary\": \"#a11616\",\r\n      \"secondary\": \"#671718\",\r\n      \"primaryLight\": \"#ffded9\",\r\n      \"background\": \"#ffffff\",\r\n      \"section\": \"#fff9f9\",\r\n      \"text\": \"#333333\",\r\n      \"wText\": \"#ffffff\",\r\n      \"bText\": \"#000000\"\r\n    },\r\n    \"dark\": {\r\n      \"primary\": \"#ff4d4d\",\r\n      \"secondary\": \"#a11616\",\r\n      \"background\": \"#1a0000\",\r\n      \"section\": \"#2e0000\",\r\n      \"text\": \"#ffcccc\",\r\n      \"wText\": \"#ffffff\",\r\n      \"bText\": \"#330000\"\r\n    }\r\n  },\r\n  \"socialMediaLinks\": {\r\n    \"facebook\": \"https://facebook.com/ieeehelwan\",\r\n    \"insta\": \"https://instagram.com/ieeehelwan\"\r\n  },\r\n  \"homePage\": {\r\n    \"aboutUs\": {\r\n      \"description\": \"Welcome to IEEE Helwan. We are a student branch of IEEE located at Helwan University.\"\r\n    },\r\n    \"megaEvents\": {\r\n      \"description\": \"Annual mega events organized by IEEE Helwan.\",\r\n      \"images\": [\r\n        {\r\n          \"id\": 1,\r\n          \"title\": \"Mega Event 2025\",\r\n          \"image\": \"https://example.com/images/event1.png\",\r\n          \"date\": \"2025-05-20\"\r\n        }\r\n      ]\r\n    },\r\n    \"competition\": {\r\n      \"images\": [\r\n        {\r\n          \"id\": 2,\r\n          \"title\": \"Coding Competition\",\r\n          \"image\": \"https://example.com/images/competition1.png\",\r\n          \"date\": \"2025-06-15\"\r\n        }\r\n      ]\r\n    },\r\n    \"reviews\": [\r\n      {\r\n        \"review\": \"IEEE Helwan provides excellent opportunities for students.\",\r\n        \"author\": \"John Doe\",\r\n        \"jobTitle\": \"Software Engineer\"\r\n      }\r\n    ],\r\n    \"whyJoin\": {\r\n      \"mainTitle\": \"Why Choose IEEE Helwan\",\r\n      \"description\": [\"Great learning opportunities\", \"Networking with professionals\", \"Leadership development\"]\r\n    }\r\n  },\r\n  \"aboutPage\": {\r\n    \"hero\": {\r\n      \"title\": \"About IEEE Helwan\",\r\n      \"description\": \"IEEE Helwan is a community of technology enthusiasts at Helwan University.\"\r\n    },\r\n    \"vision\": {\r\n      \"title\": \"Our Vision\",\r\n      \"description\": {\r\n        \"mission\": \"To foster technological innovation and leadership.\",\r\n        \"vision\": \"To be a hub for the brightest minds in technology.\"\r\n      }\r\n    },\r\n    \"history\": {\r\n      \"title\": \"Our History\",\r\n      \"description\": [\r\n        {\r\n          \"date\": \"2010-01-01\",\r\n          \"description\": \"IEEE Helwan was established as a student branch at Helwan University.\",\r\n          \"image\": \"https://example.com/images/history1.png\"\r\n        }\r\n      ]\r\n    },\r\n    \"team\": {\r\n      \"title\": \"Our Team\",\r\n      \"members\": [\r\n        {\r\n          \"name\": \"Alice Smith\",\r\n          \"jobTitle\": \"President\",\r\n          \"image\": \"https://example.com/images/alice.png\"\r\n        },\r\n        {\r\n          \"name\": \"Bob Johnson\",\r\n          \"jobTitle\": \"Vice President\",\r\n          \"image\": \"https://example.com/images/bob.png\"\r\n        }\r\n      ]\r\n    }\r\n  },\r\n  \"events\": {\r\n    \"megaEvents\": {\r\n      \"description\": {\r\n        \"title\": \"Upcoming Mega Events\"\r\n      },\r\n      \"images\": [\r\n        {\r\n          \"id\": 1,\r\n          \"title\": \"Annual Conference\",\r\n          \"image\": \"https://example.com/images/event1.png\",\r\n          \"date\": \"2025-09-15\"\r\n        }\r\n      ]\r\n    },\r\n    \"timeline\": {\r\n      \"dates\": [2025, 2026],\r\n      \"events\": [\r\n        {\r\n          \"location\": \"Helwan University\",\r\n          \"date\": \"2025-03-10\",\r\n          \"name\": \"IEEE Annual Event\",\r\n          \"description\": \"An annual event for all IEEE members.\",\r\n          \"mainImage\": \"https://example.com/images/event2.png\",\r\n          \"images\": [\"https://example.com/images/event2a.png\"]\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/home/committee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home",
+						"committee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCommittee",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/home/committee/ieee helwan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home",
+						"committee",
+						"ieee helwan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateTeam",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"committee\": \"are\",\r\n  \"teamName\": \"Innovator33s v2\",\r\n  \"teamMember1\": \"Zyad\",\r\n  \"teamMember2\": \"Jane Smith\",\r\n  \"teamMember3\": \"Michael Brown\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/home/team/678d24766f66d4d4453394c3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home",
+						"team",
+						"678d24766f66d4d4453394c3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTeamsn",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/home/teams",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home",
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addMegaEvents",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "images",
+							"type": "file",
+							"src": [
+								"/D:/br36.png",
+								"/D:/br37.png"
+							]
+						},
+						{
+							"key": "title",
+							"value": "fuck",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "25-30-2025",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/home/mega-events?folderName=ras&committee=ras",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home",
+						"mega-events"
+					],
+					"query": [
+						{
+							"key": "folderName",
+							"value": "ras"
+						},
+						{
+							"key": "committee",
+							"value": "ras"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addLogo",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "logo",
+							"type": "file",
+							"src": "/D:/br32.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/home/committee-logo?committee=ras&folderName=logo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home",
+						"committee-logo"
+					],
+					"query": [
+						{
+							"key": "committee",
+							"value": "ras"
+						},
+						{
+							"key": "folderName",
+							"value": "logo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginAdmin",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InpAZ21haWwuY29tIiwiaWQiOiI2N2FjOWY1MmQzYjJjODE0NmQ4MTQ1ZGMiLCJpYXQiOjE3MzkzNjYzMDR9.NWfURnccUyp_U9KcHkOZWvCMOJBF1Vl4gO3xFLWJsGA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"z@gmail.com\",\r\n    \"password\": \"hello\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTeamsTestingAuth",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InpAZ21haWwuY29tIiwiaWQiOiI2N2FjOWY1MmQzYjJjODE0NmQ4MTQ1ZGMiLCJpYXQiOjE3MzkzNjYzMDR9.NWfURnccUyp_U9KcHkOZWvCMOJBF1Vl4gO3xFLWJsGA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/home/teams",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home",
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCommittee",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"committee\": \"ieee helwan\",\r\n  \"logo\": \"/assets/logos/ieee_helwan_logo.png\",\r\n  \"colors\": {\r\n    \"light\": {\r\n      \"primary\": \"#a11616\",\r\n      \"secondary\": \"#671718\",\r\n      \"primaryLight\": \"#ffded9\",\r\n      \"background\": \"#ffffff\",\r\n      \"section\": \"#fff9f9\",\r\n      \"text\": \"#333333\",\r\n      \"wText\": \"#ffffff\",\r\n      \"bText\": \"#000000\"\r\n    },\r\n    \"dark\": {\r\n      \"primary\": \"#ff4d4d\",\r\n      \"secondary\": \"#a11616\",\r\n      \"background\": \"#1a0000\",\r\n      \"section\": \"#2e0000\",\r\n      \"text\": \"#ffcccc\",\r\n      \"wText\": \"#ffffff\",\r\n      \"bText\": \"#330000\"\r\n    }\r\n  },\r\n  \"socialMediaLinks\": {\r\n    \"facebook\": \"https://facebook.com/ieeehelwan\",\r\n    \"insta\": \"https://instagram.com/ieeehelwan\"\r\n  },\r\n  \"homePage\": {\r\n    \"aboutUs\": {\r\n      \"description\": \"IEEE Helwan Chapter is committed to fostering engineering excellence and advancing technology for humanity.\"\r\n    },\r\n    \"megaEvents\": {\r\n      \"description\": \"Join us for the largest technical events in the region.\",\r\n      \"images\": [\r\n        {\r\n          \"title\": \"Tech Conference 2025\",\r\n          \"image\": \"/assets/mega_events/tech_conf.jpg\",\r\n          \"date\": \"2025-05-12\"\r\n        }\r\n      ]\r\n    },\r\n    \"competition\": {\r\n      \"images\": [\r\n        {\r\n          \"title\": \"Coding Challenge 2025\",\r\n          \"image\": \"/assets/competition/coding_challenge.jpg\",\r\n          \"date\": \"2025-06-15\"\r\n        }\r\n      ]\r\n    },\r\n    \"reviews\": [\r\n      {\r\n        \"review\": \"IEEE Helwan is an incredible community with lots of opportunities to learn and grow.\",\r\n        \"author\": \"John Doe\",\r\n        \"jobTitle\": \"Software Engineer\"\r\n      }\r\n    ],\r\n    \"whyJoin\": {\r\n      \"mainTitle\": \"Why Choose IEEE Helwan\",\r\n      \"description\": [\r\n        \"Join a community of innovators.\",\r\n        \"Access to exclusive events and competitions.\"\r\n      ]\r\n    }\r\n  },\r\n  \"aboutPage\": {\r\n    \"hero\": {\r\n      \"title\": \"About IEEE Helwan\",\r\n      \"description\": \"We are a student chapter at Helwan University, aiming to drive innovation and excellence in technology.\"\r\n    },\r\n    \"vision\": {\r\n      \"title\": \"Our Vision\",\r\n      \"description\": {\r\n        \"mission\": \"To empower students to become leaders in the field of technology.\",\r\n        \"vision\": \"To be a global leader in engineering education and research.\"\r\n      }\r\n    },\r\n    \"history\": {\r\n      \"title\": \"Our History\",\r\n      \"description\": [\r\n        {\r\n          \"date\": \"2010-05-15\",\r\n          \"description\": \"IEEE Helwan Chapter founded.\",\r\n          \"image\": \"/assets/history/founded.jpg\"\r\n        }\r\n      ]\r\n    },\r\n    \"team\": {\r\n      \"title\": \"Our Team\",\r\n      \"members\": [\r\n        {\r\n          \"name\": \"Alice Johnson\",\r\n          \"jobTitle\": \"President\",\r\n          \"image\": \"/assets/team/alice_johnson.jpg\"\r\n        },\r\n        {\r\n          \"name\": \"Bob Williams\",\r\n          \"jobTitle\": \"Vice President\",\r\n          \"image\": \"/assets/team/bob_williams.jpg\"\r\n        }\r\n      ]\r\n    }\r\n  },\r\n  \"events\": {\r\n    \"megaEvents\": {\r\n      \"description\": {\r\n        \"title\": \"Mega Events 2025\"\r\n      },\r\n      \"images\": [\r\n        {\r\n          \"title\": \"Tech Conference\",\r\n          \"image\": \"/assets/events/tech_conf.jpg\",\r\n          \"date\": \"2025-06-20\"\r\n        }\r\n      ]\r\n    },\r\n    \"timeline\": {\r\n      \"dates\": [2025, 2026],\r\n      \"events\": [\r\n        {\r\n          \"location\": \"Helwan University\",\r\n          \"date\": \"2025-06-20\",\r\n          \"name\": \"Tech Conference 2025\",\r\n          \"description\": \"A global tech event with top speakers.\",\r\n          \"mainImage\": \"/assets/events/tech_conf_main.jpg\",\r\n          \"images\": [\r\n            \"/assets/events/tech_conf.jpg\"\r\n          ]\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/home/committee/cs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home",
+						"committee",
+						"cs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "uploadHistory",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "description",
+							"value": "ali",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "backend",
+							"type": "text"
+						},
+						{
+							"key": "images",
+							"type": "file",
+							"src": [
+								"/D:/20231224_174654.jpg",
+								"/D:/20231224_174654copy.jpg"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/home/history?folderName=ras&committee=ras",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home",
+						"history"
+					],
+					"query": [
+						{
+							"key": "folderName",
+							"value": "ras"
+						},
+						{
+							"key": "committee",
+							"value": "ras"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "uploadCommitteeMembers",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "zliad",
+							"type": "text"
+						},
+						{
+							"key": "jobTitle",
+							"value": "backend",
+							"type": "text"
+						},
+						{
+							"key": "images",
+							"type": "file",
+							"src": "/D:/br23.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/home/ieee-teamMembers?folderName=rasDir&committee=ras",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home",
+						"ieee-teamMembers"
+					],
+					"query": [
+						{
+							"key": "folderName",
+							"value": "rasDir"
+						},
 						{
 							"key": "committee",
 							"value": "ras"

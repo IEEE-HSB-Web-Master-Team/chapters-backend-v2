@@ -54,32 +54,42 @@ const teamController = {
 
   updateTeam: async (req, res, next) => {
     const { id } = req.params; 
-    const { committe, teamName, teamMembers } = req.body;
-
+    const { committee: committe, teamName, teamMember1, teamMember2, teamMember3, teamMember4, teamMember5, teamMember6 } = req.body;
+  
     if (!id) {
       logger.error("Team ID is required.");
       return res.status(400).json({ success: false, error: "Team ID is required." });
     }
-
+  
+    // Ensure teamMembers is passed in as an array
+    const teamMembers = [
+      teamMember1,
+      teamMember2,
+      teamMember3,
+      teamMember4,
+      teamMember5,
+      teamMember6,
+    ];
+  
     try {
       const updatedTeam = await Team.findByIdAndUpdate(
         id,
         { committe, teamName, teamMembers },
-        { new: true } 
+        { new: true }  
       );
-
+  
       if (!updatedTeam) {
         logger.error(`Team not found for ID: ${id}`);
         return res.status(404).json({ success: false, error: "Team not found." });
       }
-
+  
       logger.info(`Team updated successfully: ${JSON.stringify(updatedTeam)}`);
       return res.status(200).json({ success: true, data: updatedTeam });
     } catch (err) {
       logger.error(`Error updating team: ${err.message}`);
       return res.status(500).json({ success: false, error: "An error occurred while updating the team." });
     }
-  },
+  },  
 
   deleteTeam: async (req, res, next) => {
     const { id } = req.params;

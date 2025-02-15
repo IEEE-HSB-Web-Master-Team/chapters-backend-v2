@@ -3,12 +3,13 @@ import { connectDB } from "./config/database.js";
 import { configDotenv } from "dotenv";
 import homePageRouter from "./routes/pageRoute.js";
 import addTeamRouter from "./routes/teamRoute.js";
+import authRouter from "./routes/authRoute.js";
 import { logger } from "./config/logger.js";
 import toobusy_js from "toobusy-js";
 import path from "path";
-import { fileURLToPath } from "url";
 import cors from "cors";
 import helmet from "helmet";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -47,10 +48,9 @@ app.use((req, _, next) => {
 	next();
 });
 
-app.use(cors()); // Allows requests from any origin
-
 app.use("/api/home", homePageRouter);
 app.use("/api/home", addTeamRouter);
+app.use("/auth", authRouter);
 
 app.use((error, req, res, next) => {
 	logger.error(`Error: ${error.message}`);

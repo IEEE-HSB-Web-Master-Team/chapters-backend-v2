@@ -6,7 +6,6 @@ const teamSchema = new Schema(
   {
     committe: {
       type: String,
-      // enum: ["cs", "pes", "ras"],
       required: true,
       trim: true,
       lowercase: true,
