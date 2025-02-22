@@ -52,6 +52,44 @@ const pageController = {
     }
   },
 
+  addContact: async (req, res, next) => {
+    try {
+        const { name, email, description } = req.body;
+        
+        if (!name || !email || !description) {
+            return res.status(400).json({ message: "All fields are required." });
+        }
+
+        const newContact = await PageService.addContact({ name, email, description });
+
+        return res.status(201).json({ message: "Contact added successfully", newContact });
+    } catch (err) {
+        logger.error("Error adding contact:", err);
+        return res.status(500).json({ message: "Internal Server Error" });
+    }
+  },
+
+  getContacts: async (req, res, next) => {
+    try {
+        const contacts = await PageService.getContacts();
+
+        // Send the response with contacts
+        return res.status(200).json({
+            success: true,
+            message: "Contacts fetched successfully",
+            contacts
+        });
+
+    } catch (err) {
+        logger.error("Error fetching contacts:", err);
+        return res.status(500).json({ 
+            success: false, 
+            message: "Internal Server Error" 
+        });
+    }
+},
+
+
   getHomePage: async (req, res, next) => {
     try {
       const homePageInfo = await PageService.getPageInfo("home");
