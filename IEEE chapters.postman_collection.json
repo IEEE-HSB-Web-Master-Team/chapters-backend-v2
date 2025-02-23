@@ -644,6 +644,60 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "postContact",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"ziad\",\r\n    \"email\": \"ziad@gmail.com\",\r\n    \"description\": \"website not working\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/home/contact",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home",
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getContacts",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/home/contacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"home",
+						"contacts"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

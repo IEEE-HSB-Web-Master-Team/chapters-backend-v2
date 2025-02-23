@@ -9,6 +9,8 @@ router.get('/committee', pageController.getCommittee)
 
 router.get('', pageController.getHomePage)
 
+router.post('/contact', pageController.addContact)
+
 router.use(Auth)
 
 router.post('/committee', pageController.addCommittee)
@@ -33,5 +35,7 @@ router.post('/ieee-teamMembers', upload.array('images'), pageController.uploadIe
 router.delete('/image/:imageID', pageController.deleteImage)
 
 router.post('/reviews', pageController.uploadReviews)
+
+router.get('/contacts', pageController.getContacts)
 
 export default router

@@ -1,4 +1,5 @@
 import App from "../models/pageModel.js"; 
+import Contact from "../models/contactModel.js"
 import { logger } from "../config/logger.js";
 import { ObjectId } from 'mongodb';
 class PageService {
@@ -36,6 +37,28 @@ class PageService {
             throw new Error("Error adding committee: " + error.message);
         }
     }
+
+    static async addContact(data) {
+        try {
+            const newContact = new Contact(data);
+            await newContact.save();
+            return newContact;
+        } catch (error) {
+            logger.error("Error in PageService.addContact:", error);
+            throw error; 
+        }
+    }
+
+    static async getContacts() {
+        try {
+            const data = await Contact.find({}, { updatedAt: 0, __v: 0 });
+            return data;
+        } catch (error) {
+            logger.error("Error fetching contacts:", error);
+            throw error; 
+        }
+    }
+    
 
     static async uploadReviews(reviewData, committeeName) {
         try {
@@ -95,7 +118,7 @@ class PageService {
     
             return updateTeam;
         } catch (error) {
-            console.error("Error uploading IEEE team members:", error);
+            logger.error("Error uploading IEEE team members:", error);
             throw error;
         }
     }
@@ -114,7 +137,7 @@ class PageService {
     
             return updateEvents;
         } catch (error) {
-            console.error("Error uploading events:", error);
+            logger.error("Error uploading events:", error);
             throw error;
         }
     }
@@ -223,7 +246,6 @@ class PageService {
                     if(key === 'buffer') continue; // heavy pruning
 
                     const currentPath = [...path, key];
-                    
                     if (Array.isArray(obj[key])) {
                         for (let i = 0; i < obj[key].length; i++) {
                             if (obj[key][i]._id?.toString() === imageID) {
