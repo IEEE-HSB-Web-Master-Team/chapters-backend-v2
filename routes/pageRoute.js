@@ -29,6 +29,8 @@ router.post('/history', upload.array('images'), pageController.uploadHistory)
 
 router.post('/ieee-teamMembers', upload.array('images'), pageController.uploadIeeeTeamMembers)
 
+router.get('/gallery', pageController.getGallery)
+
 // ? WTF!
 // router.post('/events', upload.array('images'), pageController.uploadEvents)
 

@@ -20,6 +20,7 @@ const imageSchema = new Schema({
 });
 
 const homePageSchema = new Schema({
+    main: { type: String, required: false },
     aboutUs: {
         description: { type: String, required: false },
     },
@@ -58,6 +59,7 @@ const teamMemberSchema = new Schema({
 });
 
 const aboutPageSchema = new Schema({
+    main: { type: String, required: false }, 
     hero: {
         title: String,
         description: String
@@ -83,6 +85,7 @@ const eventSchema = new Schema({
 });
 
 const eventsSchema = new Schema({
+    main: { type: String, required: false },
     megaEvents: {
         description: { title: String },
         images: [imageSchema]
@@ -124,10 +127,13 @@ const appSchema = new Schema({
     },
     logo: { type: String },
     colors: colorSchema,
+    gallery: { 
+        images: [{ type: String }]
+    },
     socialMediaLinks: socialMediaLinksSchema,
     homePage: homePageSchema,
     aboutPage: aboutPageSchema,
-    events: eventsSchema
+    events: eventsSchema,
 });
 
 const App = mongoose.model("App", appSchema);

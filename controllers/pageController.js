@@ -26,6 +26,30 @@ const pageController = {
     }
   },
 
+  uploadGallery: async(req, res, next) => {
+    const { folderName, committee } = req.query;
+    const { title, date } = req.body;
+
+    try {
+      if (!req.files || req.files.length === 0) {
+        return res.status(400).json({ success: false, error: "No files uploaded" });
+      }
+
+      
+
+    } catch (error) {
+      
+    }
+  },
+
+  uploadMain: async(req, res, next) => {
+    try {
+      
+    } catch (error) {
+      
+    }
+  },
+
   addCommittee: async (req, res, next) => {
     try {
       const { committee, logo, colors, socialMediaLinks, homePage, aboutPage, events } = req.body;
@@ -73,7 +97,6 @@ const pageController = {
     try {
         const contacts = await PageService.getContacts();
 
-        // Send the response with contacts
         return res.status(200).json({
             success: true,
             message: "Contacts fetched successfully",
